@@ -1,0 +1,9 @@
+name: flaskapp
+metadata:
+  template: azd-python-flask
+services:
+  flaskapp:
+    project: .
+    language: python
+    host: appservice
+    port: 5000

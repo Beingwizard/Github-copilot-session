@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Restaurants</h1>
+    <a class="add-btn" href="{{ url_for('add_restaurant') }}">Add Restaurant</a>
+    <div class="card-list">
+        {% for restaurant in restaurants %}
+        <div class="card">
+            <div class="fancy-name">{{ restaurant.name }}</div>
+            <div class="card-content">
+                <p>{{ restaurant.description }}</p>
+                <div class="rating">
+                    {% if restaurant_ratings[restaurant.id] is not none %}
+                        {% for i in range(restaurant_ratings[restaurant.id]|round(0, 'floor')) %}
+                            <span class="star">&#9733;</span>
+                        {% endfor %}
+                        {% for i in range(5 - (restaurant_ratings[restaurant.id]|round(0, 'floor'))) %}
+                            <span class="star empty">&#9733;</span>
+                        {% endfor %}
+                        <span class="rating-value">{{ restaurant_ratings[restaurant.id] }} / 5</span>
+                    {% else %}
+                        <span class="rating-value">No ratings yet</span>
+                    {% endif %}
+                </div>
+                <a class="view-btn" href="{{ url_for('view_restaurant', restaurant_id=restaurant.id) }}">View &amp; Rate</a>
+            </div>
+        </div>
+        {% else %}
+        <p>No restaurants listed yet.</p>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

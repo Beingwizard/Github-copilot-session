@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rate {{ restaurant.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Rate {{ restaurant.name }}</h1>
+    <form method="post">
+        <label>Rating (1-5): <input type="number" name="rating" min="1" max="5" required></label>
+        <label>Factors (comma separated): <input type="text" name="factors" required></label>
+        <label>Comment: <textarea name="comment" required></textarea></label>
+        <button type="submit">Submit Rating</button>
+    </form>
+    <a href="{{ url_for('view_restaurant', restaurant_id=restaurant.id) }}">Back to restaurant</a>
+</div>
+</body>
+</html>

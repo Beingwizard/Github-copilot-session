@@ -1,0 +1,111 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+}
+h1, h2 {
+    color: #2c3e50;
+}
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.add-btn, .view-btn {
+    display: inline-block;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.add-btn:hover, .view-btn:hover {
+    background: #217dbb;
+}
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+.card {
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    width: 270px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+.card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background: #eee;
+}
+.card-content {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.rating {
+    color: #e67e22;
+    font-weight: bold;
+    margin: 8px 0 12px 0;
+}
+.star {
+    color: #e67e22;
+    font-size: 1.2em;
+}
+.star.empty {
+    color: #ddd;
+}
+.rating-value {
+    margin-left: 8px;
+    color: #555;
+    font-size: 0.95em;
+}
+form label {
+    display: block;
+    margin: 12px 0 6px 0;
+}
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+ul {
+    padding-left: 20px;
+}
+li {
+    margin-bottom: 10px;
+}
+.fancy-name {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.1em;
+    font-weight: bold;
+    color: #8e44ad;
+    text-align: center;
+    margin: 18px 0 10px 0;
+    letter-spacing: 1px;
+}

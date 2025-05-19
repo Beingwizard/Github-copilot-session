@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ restaurant.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>{{ restaurant.name }}</h1>
+    <p>{{ restaurant.description }}</p>
+    <a href="{{ url_for('rate_restaurant', restaurant_id=restaurant.id) }}">Rate this restaurant</a>
+    <h2>Reviews</h2>
+    <ul>
+        {% for review in reviews %}
+        <li>
+            <strong>Rating:</strong> <span class="rating">{{ review.rating }}</span><br>
+            <strong>Factors:</strong> {{ review.factors }}<br>
+            <strong>Comment:</strong> {{ review.comment }}
+        </li>
+        {% else %}
+        <li>No reviews yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to list</a>
+</div>
+</body>
+</html>
